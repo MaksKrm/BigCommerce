@@ -5,6 +5,7 @@ namespace App\Http\Controllers\BigCommerce;
 
 use App\Http\Controllers\Controller;
 use GuzzleHttp\Client;
+use GuzzleHttp\Psr7;
 use GuzzleHttp\Exception\RequestException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -67,7 +68,7 @@ class BigCommerceController extends Controller
 
             if ($e->hasResponse()) {
                 if ($statusCode != 500) {
-                    $errorMessage = $e->getResponse().' '.$e->getMessage();
+                    $errorMessage = Psr7\str($e->getResponse());
                 }
             }
 
