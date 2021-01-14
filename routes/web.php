@@ -19,13 +19,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/error', function () {
+    return view('bigCommerce.error');
+});
+
 Route::get('/testUrl/{code?}', function ($code) {
     return 'test url code = ' . $code;
 });
 
 Route::group(['namespace' => 'BigCommerce', 'prefix' => 'bigCommerce', 'as' => 'bigCommerce.'], function () {
     /* BigCommerce App Init */
-    Route::get('/auth', [BigCommerceController::class, 'auth'])->name('auth');
+    Route::get('/auth', [BigCommerceController::class, 'install'])->name('install');
     Route::get('/load', [BigCommerceController::class, 'load'])->name('load');
     Route::get('/uninstall', [BigCommerceController::class, 'uninstall'])->name('uninstall');
 

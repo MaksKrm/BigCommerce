@@ -12,16 +12,14 @@
             'csrfToken' => csrf_token(),
         ]) !!};
 
-    if(!inIframe()) {
+    if (!inIframe()) {
         window.location.replace('https://splitit-bc.iwdfun.com/testUrl/layoutBlade');
     }
 
-    function inIframe () {
+    function inIframe() {
         try {
-            alert(1);
             return window.self !== window.top;
         } catch (e) {
-            alert(2);
             return true;
         }
     }
