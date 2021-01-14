@@ -67,7 +67,7 @@ class BigCommerceController extends Controller
 
             if ($e->hasResponse()) {
                 if ($statusCode != 500) {
-                    $errorMessage = $e->getResponse();
+                    $errorMessage = $e->getResponse().' '.$e->getMessage();
                 }
             }
 
