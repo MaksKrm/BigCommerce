@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\BigCommerceController;
+use App\Http\Controllers\BigCommerce\BigCommerceController;
+use App\Http\Controllers\BigCommerce\IntegrationsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +19,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/load', [BigCommerceController::class, 'load'])->name('load');
+Route::get('/testUrl/{code?}', function ($code) {
+    return 'test url code = ' . $code;
+});
+
+Route::group(['namespace' => 'BigCommerce', 'prefix' => 'bigCommerce', 'as' => 'bigCommerce.', 'middleware' => ['cors']], function () {
+    /* BigCommerce App Init */
+    Route::get('/auth', [BigCommerceController::class, 'auth'])->name('auth');
+    Route::get('/load', [BigCommerceController::class, 'load'])->name('load');
+    Route::get('/uninstall', [BigCommerceController::class, 'uninstall'])->name('uninstall');
+
+    Route::group(['prefix' => 'integrations', 'as' => 'integrations.'], function () {
+        Route::match(['get', 'post'], '/index', [IntegrationsController::class, 'index'])->name('index');
+    });
+
+});
+
