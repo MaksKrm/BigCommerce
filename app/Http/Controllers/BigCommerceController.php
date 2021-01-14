@@ -14,6 +14,6 @@ class BigCommerceController extends Controller
 
     public function load(Request $request)
     {
-        dd($request->toArray());
+        return view('bigCommerce.dashboard');
     }
 }
