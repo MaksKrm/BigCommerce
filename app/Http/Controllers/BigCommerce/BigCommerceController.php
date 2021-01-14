@@ -64,20 +64,20 @@ class BigCommerceController extends Controller
             return redirect('/');
         } catch (RequestException $e) {
             $statusCode = $e->getResponse()->getStatusCode();
-            $errorMessage = "An error occurred.";
+//            $errorMessage = "An error occurred.";
 
-            if ($e->hasResponse()) {
-                if ($statusCode != 500) {
-                    $errorMessage = Psr7\str($e->getResponse());
-                }
-            }
+//            if ($e->hasResponse()) {
+//                if ($statusCode != 500) {
+//                    $errorMessage = Psr7\str($e->getResponse());
+//                }
+//            }
 
             // If the merchant installed the app via an external link, redirect back to the
             // BC installation failure page for this app
             if ($request->has('external_install')) {
                 return redirect('https://login.bigcommerce.com/app/' . self::CLIENT_ID . '/install/failed');
             } else {
-                return redirect('error')->with('error_message', $errorMessage);
+                return redirect('error')->with('error_message', 'failed auth');
             }
         }
     }
@@ -94,7 +94,7 @@ class BigCommerceController extends Controller
             $request->session()->put('owner_id', $data['owner']['id']);
             $request->session()->put('owner_email', $data['owner']['email']);
             $request->session()->put('store_hash', $data['context']);
-//            session(['store_hash' => $data['store_hash']]);
+            session(['store_hash' => $data['store_hash']]);
         }
 
         return view('bigCommerce.dashboard',
