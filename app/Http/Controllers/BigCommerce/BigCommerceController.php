@@ -37,7 +37,7 @@ class BigCommerceController extends Controller
                 'json' => [
                     'client_id' => self::CLIENT_ID,
                     'client_secret' => self::CLIENT_SECRET,
-                    'redirect_uri' => $this->baseURL . '/auth/install',
+                    'redirect_uri' => $this->baseURL . '/bigCommerce/install',
                     'grant_type' => 'authorization_code',
                     'code' => $request->input('code'),
                     'scope' => $request->input('scope'),
@@ -94,7 +94,7 @@ class BigCommerceController extends Controller
             $request->session()->put('owner_id', $data['owner']['id']);
             $request->session()->put('owner_email', $data['owner']['email']);
             $request->session()->put('store_hash', $data['context']);
-            session(['store_hash' => $data['store_hash']]);
+//            session(['store_hash' => $data['store_hash']]);
         }
 
         return view('bigCommerce.dashboard',
