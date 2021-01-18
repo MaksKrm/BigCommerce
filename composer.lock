@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b41d0f1b17f927973f2443453791575d",
+    "content-hash": "b542e676c2050735d1441e31277b6ebd",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -61,6 +61,63 @@
                 "source": "https://github.com/asm89/stack-cors/tree/v2.0.2"
             },
             "time": "2020-10-29T16:03:21+00:00"
+        },
+        {
+            "name": "bigcommerce/api",
+            "version": "3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bigcommerce/bigcommerce-api-php.git",
+                "reference": "bd9f45260d077ee443f38e1dc025f6d64f19f0d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bigcommerce/bigcommerce-api-php/zipball/bd9f45260d077ee443f38e1dc025f6d64f19f0d3",
+                "reference": "bd9f45260d077ee443f38e1dc025f6d64f19f0d3",
+                "shasum": ""
+            },
+            "require": {
+                "firebase/php-jwt": "~3.0|~5.0",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "codeless/jugglecode": "1.0",
+                "php-coveralls/php-coveralls": "2.1",
+                "phpunit/phpunit": "^4.8.35"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Bigcommerce": "src/"
+                },
+                "psr-4": {
+                    "Bigcommerce\\Test\\": "test/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bigcommerce",
+                    "homepage": "http://www.bigcommerce.com"
+                }
+            ],
+            "description": "Enables PHP applications to communicate with the Bigcommerce API.",
+            "homepage": "http://developer.bigcommerce.com",
+            "keywords": [
+                "api",
+                "business",
+                "ecommerce",
+                "http",
+                "rest"
+            ],
+            "support": {
+                "issues": "https://github.com/bigcommerce/bigcommerce-api-php/issues",
+                "source": "https://github.com/bigcommerce/bigcommerce-api-php/tree/master"
+            },
+            "time": "2018-08-22T02:24:15+00:00"
         },
         {
             "name": "brick/math",
@@ -516,6 +573,60 @@
                 "source": "https://github.com/fideloper/TrustedProxy/tree/4.4.1"
             },
             "time": "2020-10-22T13:48:01+00:00"
+        },
+        {
+            "name": "firebase/php-jwt",
+            "version": "v5.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/firebase/php-jwt.git",
+                "reference": "feb0e820b8436873675fd3aca04f3728eb2185cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/feb0e820b8436873675fd3aca04f3728eb2185cb",
+                "reference": "feb0e820b8436873675fd3aca04f3728eb2185cb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.8 <=9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Firebase\\JWT\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Neuman Vong",
+                    "email": "neuman+pear@twilio.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Anant Narayanan",
+                    "email": "anant@php.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
+            "homepage": "https://github.com/firebase/php-jwt",
+            "keywords": [
+                "jwt",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/firebase/php-jwt/issues",
+                "source": "https://github.com/firebase/php-jwt/tree/master"
+            },
+            "time": "2020-03-25T18:49:23+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",
