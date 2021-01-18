@@ -117,7 +117,7 @@ class BigCommerceController extends Controller
 
     public function uninstall(Request $request)
     {
-        $request = $this->verifySignedRequest($request->get('signed_payload'));
+//        $request = $this->verifySignedRequest($request->get('signed_payload'));
 
         return "uninstall";
     }

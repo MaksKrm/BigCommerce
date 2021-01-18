@@ -12,17 +12,11 @@
             'csrfToken' => csrf_token(),
         ]) !!};
 
-    if (!inIframe()) {
+    if (!!window.self !== window.top) {
+        // need to redirect admin url
         window.location.replace('https://splitit-bc.iwdfun.com/testUrl/layoutBlade');
     }
 
-    function inIframe() {
-        try {
-            return window.self !== window.top;
-        } catch (e) {
-            return true;
-        }
-    }
     </script>
 
     @yield('before-head')
