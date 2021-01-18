@@ -27,7 +27,7 @@ Route::get('/testUrl/{code?}', function ($code) {
     return 'test url code = ' . $code;
 });
 
-Route::group(['namespace' => 'BigCommerce', 'prefix' => 'bigCommerce', 'as' => 'bigCommerce.'], function () {
+Route::group(['namespace' => 'BigCommerce', 'prefix' => 'bigcommerce', 'as' => 'bigCommerce.'], function () {
     /* BigCommerce App Init */
     Route::get('/auth', [BigCommerceController::class, 'auth'])->name('auth');
     Route::get('/load', [BigCommerceController::class, 'load'])->name('load');
